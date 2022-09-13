@@ -1,33 +1,34 @@
 import PropTypes from 'prop-types';
+import {ProfileWrap, Description, Avatar, Title, InfoBox, Stats, StatsItem, StatsQuantity, StatsLabel} from "./Profile.styled"
+
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     return (
-        <div class="profile">
-            <div class="description">
-                <img
+        <ProfileWrap>
+            <Description>
+                <Avatar
                     src={avatar}
                     alt="User avatar"
-                    class="avatar"
                 />
-                <p class="name">{username}</p>
-                <p class="tag">{tag}</p>
-                <p class="location">{location}</p>
-            </div>
+                <Title>{username}</Title>
+                <InfoBox>@{tag}</InfoBox>
+                <InfoBox>{location}</InfoBox>
+            </Description>
 
-            <ul class="stats">
-                <li>
-                    <span class="label">Followers</span>
-                    <span class="quantity">{stats.followers}</span>
-                </li>
-                <li>
-                    <span class="label">Views</span>
-                    <span class="quantity">{stats.views}</span>
-                </li>
-                <li>
-                    <span class="label">Likes</span>
-                    <span class="quantity">{stats.likes}</span>
-                </li>
-            </ul>
-        </div>
+            <Stats>
+                <StatsItem>
+                    <StatsLabel>Followers</StatsLabel>
+                    <StatsQuantity>{stats.followers}</StatsQuantity>
+                </StatsItem>
+                <StatsItem>
+                    <StatsLabel>Views</StatsLabel>
+                    <StatsQuantity>{stats.views}</StatsQuantity>
+                </StatsItem>
+                <StatsItem>
+                    <StatsLabel>Likes</StatsLabel>
+                    <StatsQuantity>{stats.likes}</StatsQuantity>
+                </StatsItem>
+            </Stats>
+        </ProfileWrap>
     )
 };
  
