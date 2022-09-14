@@ -4,7 +4,7 @@ import {FriendsListWrap, FriendsItem, FriendStatus, FriendAvatar, FriendName} fr
 export const FriendList = ({ friends }) => {
     const friendsListItem = friends.map(({ avatar, name, isOnline, id }) =>
     (<FriendsItem key={id}>
-        <FriendStatus>{isOnline}</FriendStatus>
+        <FriendStatus status={isOnline}></FriendStatus>
         <FriendAvatar
             src={avatar}
             alt="User avatar"

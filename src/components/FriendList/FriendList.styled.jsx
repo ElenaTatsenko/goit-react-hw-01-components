@@ -4,7 +4,7 @@ export const FriendsListWrap = styled.ul`
   width: 320px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 `;
 
 export const FriendsItem = styled.li`
@@ -33,10 +33,12 @@ export const FriendStatus = styled.span`
 `;
 
 export const FriendAvatar = styled.img`
-  width: 48px;
+  width: 68px;
   margin-right: 10px;
+  border-radius: 6px;
 `;
 
 export const FriendName = styled.p`
   font-size: 24px;
+  font-weight: 500;
 `;
