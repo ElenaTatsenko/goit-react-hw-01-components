@@ -37,7 +37,6 @@ export const TableHeadEl = styled.th`
 `;
 
 export const TableData = styled.td`
-  ${'' /* background-color: #fff; */}
   color: #868b91;
   padding-top: 15px;
   padding-bottom: 15px;
