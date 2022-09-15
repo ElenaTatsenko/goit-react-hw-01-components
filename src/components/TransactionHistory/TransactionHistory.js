@@ -3,16 +3,7 @@ import {TransTable, TableHead, TableEl, TableHeadEl, TableData} from './Transact
 
 
 export const TransactionHistory = ({ transactions }) => {
-    const transactionItem= transactions.map(({ id, type, amount, currency}) =>
-    ( 
-    <TableEl key={id}>
-      <TableData>{type}</TableData>
-      <TableData>{amount}</TableData>
-      <TableData>{currency}</TableData>
-    </TableEl>
     
-
-    ));
     return <TransTable>
              <TableHead>
                <TableEl>
@@ -21,7 +12,12 @@ export const TransactionHistory = ({ transactions }) => {
                 <TableHeadEl>Currency</TableHeadEl>
                </TableEl>
              </TableHead>
-             <tbody>{transactionItem}
+      <tbody>{transactions.map(({id, type, amount, currency}) =>
+         <TableEl key={id}>
+      <TableData>{type}</TableData>
+      <TableData>{amount}</TableData>
+      <TableData>{currency}</TableData>
+    </TableEl>)}
              </tbody>
            </TransTable>
 }
